@@ -1,4 +1,4 @@
-# negocio-JoseBrandon-LimachiQuispe
+# Negocio - Práctica 1 de Programación Web III
 o Apellidos: Limachi Quispe
 o Nombres: Jose Brandon
 o Paralelo: B
