@@ -6,7 +6,7 @@ async function buscarPokemon() {
   const nombre = input.value.trim().toLowerCase();
 
   if (nombre === '') {
-    resultado.innerHTML = '<p class="error">Escribe el nombre de un pokémon.</p>';
+    resultado.innerHTML = '<p class="error">Escribe el nombre de un pokemon.</p>';
     return;
   }
 
@@ -26,13 +26,14 @@ async function buscarPokemon() {
 
     const data = await response.json();
     const tipos = data.types.map(t => t.type.name).join(', ');
-
+    const pesoKg = data.weight / 10;
+    const alturaM = data.height / 10;
     resultado.innerHTML = `
       <h2>${data.name}</h2>
       <img src="${data.sprites.front_default}" alt="${data.name}">
-      <p><strong>Tipos:</strong> ${tipos}</p>
-      <p><strong>Peso:</strong> ${data.weight}</p>
-      <p><strong>Altura:</strong> ${data.height}</p>
+      <p><strong>Tipo:</strong> ${tipos}</p>
+      <p><strong>Peso:</strong> ${pesoKg} kg</p>
+      <p><strong>Altura:</strong> ${alturaM} m</p>
     `;
   } catch (error) {
     resultado.innerHTML = '<p class="error">No se pudo conectar. Revisa tu conexión a internet.</p>';
@@ -40,3 +41,6 @@ async function buscarPokemon() {
 }
 
 boton.addEventListener('click', buscarPokemon);
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') buscarPokemon();
+});
