@@ -1,4 +1,4 @@
-# negocio-JoseBrandon-LimachiQuispe
+# Proyecto Negocio - Git, SQL, HTTP y PokeAPI
 o Apellidos: Limachi Quispe
 o Nombres: Jose Brandon
 o Paralelo: B
